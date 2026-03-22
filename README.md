@@ -12,6 +12,14 @@ Browshere is a native Android browser app scaffold designed for mobile first. It
 - A dark mobile UI optimized for phone screens.
 - A GitHub Actions workflow that can build a debug APK artifact for download.
 
+## What should you use to build it?
+
+- **On your phone:** use **GitHub Actions**.
+- **On your laptop/desktop:** use **Android Studio**.
+- **If you know command line tools already:** use `gradle assembleDebug`.
+
+For the full step-by-step guide, open `BUILD_ANDROID.md`.
+
 ## Project structure
 
 - `settings.gradle.kts` — Android project module definitions.
@@ -22,6 +30,7 @@ Browshere is a native Android browser app scaffold designed for mobile first. It
 - `app/src/main/res/values/*` — strings, colors, and theme values.
 - `app/src/main/res/xml/network_security_config.xml` — cleartext blocking configuration.
 - `.github/workflows/build-android-apk.yml` — CI workflow that builds a debug APK artifact.
+- `BUILD_ANDROID.md` — plain-English build and install instructions.
 
 ## Easiest way to get an APK
 
@@ -44,7 +53,7 @@ If you are confused by Android Studio, the easiest route is:
 
 ## Build from command line
 
-You need Java 17, Gradle, and the Android SDK installed.
+You need Java 17 and the Android SDK installed.
 
 ```bash
 gradle assembleDebug
