@@ -1,6 +1,16 @@
 # Browshere
 
-Browshere is now a runnable desktop browser shell built with Electron's Chromium runtime instead of a static landing page. It provides a real address bar, back/forward/reload controls, a home action, and a live browser surface managed by Electron's `WebContentsView`.
+Browshere is a runnable desktop browser shell built with Electron's Chromium runtime. It provides a real address bar, back/forward/reload controls, a home action, and a live browser surface managed by Electron's `WebContentsView`.
+
+## Important: mobile support
+
+You cannot run this project directly on an iPhone or Android phone browser right now because Electron apps are desktop applications.
+
+If you are on mobile, your realistic options are:
+
+1. **Use a desktop or laptop** and run the app locally with `npm install` and `npm start`.
+2. **Use a remote desktop or cloud dev machine** that supports Electron apps, then connect to it from your phone.
+3. **Rebuild this project as a native mobile browser app** for Android/iOS, which would require a different codebase than the current Electron desktop shell.
 
 ## What it does
 
@@ -20,7 +30,7 @@ Browshere is now a runnable desktop browser shell built with Electron's Chromium
 - `renderer/app.js` — toolbar interactions and live status updates.
 - `assets/logo.svg` — Browshere logo.
 
-## Run locally
+## Run locally on desktop
 
 1. Install dependencies:
 
