@@ -1,53 +1,43 @@
-# Browshere
+# Browshere Android Browser App
 
-Browshere is a runnable desktop browser shell built with Electron's Chromium runtime. It provides a real address bar, back/forward/reload controls, a home action, and a live browser surface managed by Electron's `WebContentsView`.
+Browshere is now a native Android browser app scaffold instead of a desktop Electron shell. It is designed for mobile first and includes the core code a usable browser app needs: a browser toolbar, URL/search input, page loading progress, secure `WebView` defaults, safe browsing support, and back/forward/home/refresh controls.
 
-## Important: mobile support
+## What is included
 
-You cannot run this project directly on an iPhone or Android phone browser right now because Electron apps are desktop applications.
-
-If you are on mobile, your realistic options are:
-
-1. **Use a desktop or laptop** and run the app locally with `npm install` and `npm start`.
-2. **Use a remote desktop or cloud dev machine** that supports Electron apps, then connect to it from your phone.
-3. **Rebuild this project as a native mobile browser app** for Android/iOS, which would require a different codebase than the current Electron desktop shell.
-
-## What it does
-
-- Opens real websites in a Chromium-powered browser view.
-- Supports search-or-navigate behavior from the address bar.
-- Exposes back, forward, reload, and home controls in a native desktop window.
-- Surfaces lightweight security status by distinguishing HTTPS pages from non-HTTPS pages.
-- Blocks unsupported external protocols from automatic in-app navigation and opens allowed popup targets in the system browser.
+- Native Android project structure using Gradle Kotlin DSL.
+- A `MainActivity` that configures a `WebView` as the live browser surface.
+- Search-or-navigate address handling for website URLs and search queries.
+- Browser controls for back, forward, refresh, and home.
+- Safer defaults including mixed-content blocking, safe browsing, third-party-cookie blocking, and non-HTTP(S) navigation blocking.
+- A dark mobile UI optimized for phone screens.
 
 ## Project structure
 
-- `package.json` — Electron app metadata and scripts.
-- `src/main.js` — main-process window creation, browser view layout, navigation, and safety guards.
-- `src/preload.js` — secure IPC bridge for renderer controls.
-- `renderer/index.html` — browser chrome UI.
-- `renderer/app.css` — desktop browser styling.
-- `renderer/app.js` — toolbar interactions and live status updates.
-- `assets/logo.svg` — Browshere logo.
+- `settings.gradle.kts` — Android project module definitions.
+- `build.gradle.kts` — top-level Android and Kotlin plugin declarations.
+- `app/build.gradle.kts` — Android app module config and dependencies.
+- `app/src/main/java/com/browshere/app/MainActivity.kt` — the main browser activity and navigation logic.
+- `app/src/main/res/layout/activity_main.xml` — the mobile browser screen layout.
+- `app/src/main/res/values/*` — strings, colors, and theme values.
+- `app/src/main/res/xml/network_security_config.xml` — cleartext blocking configuration.
 
-## Run locally on desktop
+## How to run on mobile
 
-1. Install dependencies:
+### Option 1: Android Studio
 
-   ```bash
-   npm install
-   ```
+1. Open this project in Android Studio.
+2. Let Gradle sync finish.
+3. Connect an Android phone or start an emulator.
+4. Press **Run**.
 
-2. Start the browser:
-
-   ```bash
-   npm start
-   ```
-
-## Validation
-
-Run the lightweight code checks with:
+### Option 2: Build from command line
 
 ```bash
-npm run check
+gradle assembleDebug
 ```
+
+Then install the APK on an Android device.
+
+## Important note about iPhone
+
+This code is for Android. If you want Browshere on iPhone, it would need a separate iOS app target written with Swift/SwiftUI or another iOS-compatible stack.

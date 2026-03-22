@@ -1,0 +1,9 @@
+<resources>
+    <color name="browser_background">#081120</color>
+    <color name="toolbar_background">#10213A</color>
+    <color name="browser_text">#EFF5FF</color>
+    <color name="browser_muted">#9CB3D4</color>
+    <color name="accent">#4DE2C5</color>
+    <color name="accent_surface">#1E3E4A</color>
+    <color name="surface_2">#132946</color>
+</resources>
