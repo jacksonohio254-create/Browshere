@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browshere</title>
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <header class="toolbar">
+      <div class="brand">
+        <img src="../assets/logo.svg" alt="Browshere logo" class="logo" />
+        <div>
+          <strong>Browshere</strong>
+          <p>Chromium browser shell</p>
+        </div>
+      </div>
+
+      <div class="controls" aria-label="Browser controls">
+        <button id="backButton" title="Back">←</button>
+        <button id="forwardButton" title="Forward">→</button>
+        <button id="reloadButton" title="Reload">↻</button>
+        <button id="homeButton" title="Home">⌂</button>
+      </div>
+
+      <form class="address-bar" id="addressForm">
+        <input
+          id="addressInput"
+          type="text"
+          autocomplete="off"
+          spellcheck="false"
+          aria-label="Address bar"
+          placeholder="Search or enter website"
+        />
+      </form>
+
+      <div class="status-panel">
+        <span id="securityBadge" class="badge">Protected</span>
+        <span id="pageTitle" class="page-title">Ready</span>
+      </div>
+    </header>
+
+    <script src="app.js"></script>
+  </body>
+</html>

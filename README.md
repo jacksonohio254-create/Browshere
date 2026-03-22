@@ -1,26 +1,43 @@
 # Browshere
 
-Browshere is a responsive landing page and product concept for a safer, better-looking Chromium-based browser that is intended to feel modern on mobile, tablet, and desktop devices.
+Browshere is now a runnable desktop browser shell built with Electron's Chromium runtime instead of a static landing page. It provides a real address bar, back/forward/reload controls, a home action, and a live browser surface managed by Electron's `WebContentsView`.
 
-## What is included
+## What it does
 
-- A mobile-friendly landing page with a polished hero section, browser preview, compatibility messaging, and a product roadmap.
-- A new `Browshere` SVG logo focused on trust, clarity, and a modern browser identity.
-- Safety-oriented messaging around anti-phishing, permission controls, and privacy-first defaults.
-- A lightweight static structure that can be deployed anywhere without a build step.
+- Opens real websites in a Chromium-powered browser view.
+- Supports search-or-navigate behavior from the address bar.
+- Exposes back, forward, reload, and home controls in a native desktop window.
+- Surfaces lightweight security status by distinguishing HTTPS pages from non-HTTPS pages.
+- Blocks unsupported external protocols from automatic in-app navigation and opens allowed popup targets in the system browser.
 
-## Files
+## Project structure
 
-- `index.html` — semantic content structure for the landing page.
-- `styles.css` — responsive styling, layout, and visual system.
-- `assets/logo.svg` — reusable browser logo asset.
+- `package.json` — Electron app metadata and scripts.
+- `src/main.js` — main-process window creation, browser view layout, navigation, and safety guards.
+- `src/preload.js` — secure IPC bridge for renderer controls.
+- `renderer/index.html` — browser chrome UI.
+- `renderer/app.css` — desktop browser styling.
+- `renderer/app.js` — toolbar interactions and live status updates.
+- `assets/logo.svg` — Browshere logo.
 
-## Local preview
+## Run locally
 
-Open `index.html` directly in a browser, or serve the directory with a simple static file server:
+1. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+2. Start the browser:
+
+   ```bash
+   npm start
+   ```
+
+## Validation
+
+Run the lightweight code checks with:
 
 ```bash
-python3 -m http.server 8000
+npm run check
 ```
-
-Then visit <http://localhost:8000>.

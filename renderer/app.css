@@ -1,0 +1,134 @@
+:root {
+  color-scheme: dark;
+  --bg: #081120;
+  --panel: #10213a;
+  --panel-2: #132946;
+  --text: #eff5ff;
+  --muted: #9cb3d4;
+  --border: rgba(255, 255, 255, 0.12);
+  --accent: #4de2c5;
+  --accent-2: #7aa8ff;
+  --danger: #ffb86b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at left top, rgba(77, 226, 197, 0.14), transparent 28%),
+    radial-gradient(circle at right top, rgba(122, 168, 255, 0.18), transparent 32%),
+    var(--bg);
+  color: var(--text);
+  overflow: hidden;
+}
+
+.toolbar {
+  height: 92px;
+  display: grid;
+  grid-template-columns: auto auto minmax(260px, 1fr) auto;
+  gap: 16px;
+  align-items: center;
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(8, 17, 32, 0.92);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 220px;
+}
+
+.logo {
+  width: 44px;
+  height: 44px;
+}
+
+.brand strong,
+.page-title {
+  display: block;
+  font-size: 0.95rem;
+}
+
+.brand p {
+  margin: 4px 0 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+}
+
+button,
+input {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--panel);
+  color: var(--text);
+  font: inherit;
+}
+
+button {
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  transition: transform 120ms ease, background 120ms ease, opacity 120ms ease;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: var(--panel-2);
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.address-bar {
+  width: 100%;
+}
+
+.address-bar input {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.status-panel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-self: end;
+  min-width: 220px;
+}
+
+.badge {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(77, 226, 197, 0.14);
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.badge[data-level='warning'] {
+  background: rgba(255, 184, 107, 0.14);
+  color: var(--danger);
+}
+
+.page-title {
+  max-width: 240px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--muted);
+}

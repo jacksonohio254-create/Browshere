@@ -1,0 +1,14 @@
+{
+  "name": "browshere",
+  "version": "0.1.0",
+  "description": "Browshere desktop browser shell built with Electron and Chromium.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "check": "node --check src/main.js && node --check src/preload.js && node --check renderer/app.js"
+  },
+  "devDependencies": {
+    "electron": "^37.2.0"
+  }
+}
