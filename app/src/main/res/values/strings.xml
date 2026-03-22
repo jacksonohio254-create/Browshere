@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Browshere</string>
+    <string name="address_hint">Search or enter website</string>
+    <string name="back">Back</string>
+    <string name="forward">Forward</string>
+    <string name="refresh">Refresh</string>
+    <string name="home">Home</string>
+    <string name="secure">HTTPS</string>
+    <string name="caution">Caution</string>
+    <string name="loading">Loading…</string>
+</resources>
